@@ -88,14 +88,13 @@ class IMapManager {
         if (mUiSettings == null)
             return
 
-
         //设置自定义的地图
         val path = mContext.filesDir.absolutePath + File.separator + NameUtil.MAP_STYLE
 
         val file = File(path)
         Log.i(TAG, "setUI: File:" + file.exists())
 
-        mAMap!!.setCustomMapStylePath(path)
+        mAMap.setCustomMapStylePath(path)
         mAMap.setMapCustomEnable(true)
 
         //不显示建筑物

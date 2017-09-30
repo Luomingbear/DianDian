@@ -7,7 +7,6 @@ import android.support.v4.app.FragmentManager
 import com.amap.api.maps.MapView
 import xyz.toofun.diandian.R
 import xyz.toofun.diandian.presenter.MainPresenter
-import xyz.toofun.diandian.uitl.ToastUtil
 import xyz.toofun.diandian.view.MainView
 import xyz.toofun.diandian.widget.sideslip.SideslipLayout
 
@@ -78,7 +77,7 @@ class MainActivity : BaseActivity(), MainView {
 
         if (requestCode == REQUEST_PERMISSION_LOCATION) {
             if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-                ToastUtil.showToastR(this, R.string.no_location_permission)
+                requestLocationPermission()
             } else {
                 //获取定位权限成功
                 mPresenter.startLocation()

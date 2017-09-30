@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">点点</string>
 
-    <string name="slip_up_create">上滑写故事</string>
+    <!--欢迎页-->
+    <string name="skip">跳过%d</string>
+    <string name="website">diandain.2fun.xyz</string>
+
 
     <!--权限-->
     <string name="no_location_permission">没有获取到定位权限</string>
@@ -14,4 +17,6 @@
 
     <!--地图-->
     <string name="message">消息</string>
+    <string name="slip_up_create">上滑写故事</string>
+
 </resources>

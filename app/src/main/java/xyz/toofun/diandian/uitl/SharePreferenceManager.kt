@@ -19,6 +19,7 @@ object SharePreferenceManager {
     private val USER_ID = "userId" //roomId
     private val PASSWORD = "password" //password
 
+    private val KEY_FIRST = "first_start"
 
     /**
      * 故事数据
@@ -45,6 +46,23 @@ object SharePreferenceManager {
     val IS_LOGIN = "isLogin"
     val IS_NIGHT_MODE = "isNight" //夜间模式
 
+    /**
+     * 是否是第一次打开
+     */
+    fun isFirst(context: Context?): Boolean {
+        val sp = context?.getSharedPreferences(USER_DATA, Context.MODE_PRIVATE)
+        return sp?.getBoolean(KEY_FIRST, true) ?: true
+    }
+
+    /**
+     *  设置改变“第一次打开”
+     */
+    fun setFirst(context: Context?) {
+        val sp = context?.getSharedPreferences(USER_DATA, Context.MODE_PRIVATE)
+        val editor = sp?.edit()
+        editor?.putBoolean(KEY_FIRST, false)
+        editor?.apply()
+    }
 
 //    public static void saveUserData(Context context, BaseUserInfo userInfo) {
 //        SharedPreferences sp = context.getSharedPreferences(USER_DATA,

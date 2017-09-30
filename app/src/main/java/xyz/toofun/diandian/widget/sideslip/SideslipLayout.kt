@@ -373,7 +373,7 @@ class SideslipLayout : FrameLayout {
         if (mLeftViewItem == null)
             return
 
-        if (mLeftViewItem?.layout!!.getX() ?: 0 + mx <= 0) {
+        if (mLeftViewItem?.layout!!.getX() + mx <= 0) {
             mLeftViewItem?.layout?.setX(mLeftViewItem?.layout!!.getX() + mx)
             //计算移动的位置所占的比例
             //菜单完全不可见的x坐标 减去 当前x坐标就是变化值，再求百分比就可以了
