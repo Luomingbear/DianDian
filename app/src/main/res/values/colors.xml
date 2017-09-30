@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fff</color>
+    <color name="colorPrimaryDark">#181818</color>
+    <color name="colorAccent">#ffce00</color>
+
+    <!--白色-->
+    <color name="colorWhite">#fdfdfd</color>
+    <color name="colorWhiteDeep">#f7f7f7</color>
+
+    <!--灰色-->
+    <color name="colorGrayLight">#e2e2e2</color>
+    <color name="colorGray">#cccccc</color>
+    <color name="colorGrayDeep">#898989</color>
+
+    <!--黑色-->
+    <color name="colorTranslateDark">#7c8c8b89</color>
+    <color name="colorBlackLight">#545454</color>
+    <color name="colorBlack">#252525</color>
+</resources>

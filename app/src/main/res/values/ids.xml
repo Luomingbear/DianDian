@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="sideslip_home_layout" type="id" />
+    <item name="sidelip_left_layout" type="id" />
+    <item name="sideslip_top_layout" type="id" />
+    <item name="sideslip_right_layout" type="id" />
+    <item name="sideslip_bottom_layout" type="id" />
+
+</resources>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">点点</string>
+
+    <string name="slip_up_create">上滑写故事</string>
+
+    <!--权限-->
+    <string name="no_location_permission">没有获取到定位权限</string>
+
+    <!--菜单-->
+    <string name="level">等级%d</string>
+    <string name="my_footmark">我的足迹</string>
+    <string name="my_attire">我的装扮</string>
+    <string name="setting">我的装扮</string>
+
+    <!--地图-->
+    <string name="message">消息</string>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundImageView">
+        <attr name="Scale" format="float" />
+        <attr name="BorderRadius" format="dimension|reference" />
+        <attr name="RoundType">
+            <enum name="circle" value="0" />
+            <enum name="round" value="1" />
+            <enum name="round_top_left_top_right" value="2" />
+            <enum name="round_bottom_left_bottom_right" value="3" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SideslipLayout">
+        <attr name="homeLayout" format="reference" />
+        <attr name="leftLayout" format="reference" />
+        <attr name="topLayout" format="reference" />
+        <attr name="rightLayout" format="reference" />
+        <attr name="bottomLayout" format="reference" />
+    </declare-styleable>
+</resources>

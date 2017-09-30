@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrayLight">
+
+    </com.amap.api.maps.MapView>
+
+    <ImageView
+        android:id="@+id/message"
+        android:layout_width="@dimen/icon_large"
+        android:layout_height="@dimen/icon_large"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/margin_normal"
+        android:background="@drawable/point_black_bg"
+        android:elevation="@dimen/height_normal"
+        android:padding="@dimen/margin_min"
+        android:src="@drawable/message" />
+
+    <ImageView
+        android:id="@+id/animate_position"
+        android:layout_width="@dimen/icon_large"
+        android:layout_height="@dimen/icon_large"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/navigation_height"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:background="@drawable/point_white_bg"
+        android:elevation="@dimen/height_normal"
+        android:padding="2dp"
+        android:src="@drawable/location" />
+
+    <TextView
+        android:id="@+id/create_article_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin_big"
+        android:text="@string/slip_up_create"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/font_normal" />
+</RelativeLayout>

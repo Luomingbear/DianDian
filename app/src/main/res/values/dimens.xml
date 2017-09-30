@@ -1,0 +1,59 @@
+<resources>
+
+    <!--状态栏高度-->
+    <dimen name="statusbar_view_height">0dp</dimen>
+
+    <!--标题栏的高度 -->
+    <dimen name="title_height">54dp</dimen>
+    <dimen name="navigation_height">68dp</dimen>
+    <dimen name="ad_image_height">108dp</dimen>
+
+    <!--厚度-->
+    <dimen name="height_small">3dp</dimen>
+    <dimen name="height_normal">8dp</dimen>
+    <dimen name="height_big">12dp</dimen>
+
+    <!--筛选的宽度-->
+    <dimen name="sift_window_width">110dp</dimen>
+    <dimen name="sift_round_size">5dp</dimen>
+
+    <!--选项-->
+    <dimen name="selector_height">45dp</dimen>
+
+    <!--图标的大小-->
+    <dimen name="icon_min">16dp</dimen>
+    <dimen name="icon_small">22dp</dimen>
+    <dimen name="icon_normal">28dp</dimen>
+    <dimen name="icon_large">35dp</dimen>
+
+    <!--图片的大小-->
+    <dimen name="image_min">28dp</dimen>
+    <dimen name="image_small">32dp</dimen>
+    <dimen name="image_normal">42dp</dimen>
+    <dimen name="image_big">58dp</dimen>
+    <dimen name="image_big_more">88dp</dimen>
+
+    <!--字体大小-->
+    <dimen name="font_min">9dp</dimen>
+    <dimen name="font_small">12dp</dimen>
+    <dimen name="font_normal_small">14dp</dimen>
+    <dimen name="font_normal">15dp</dimen>
+    <dimen name="font_big">18dp</dimen>
+    <dimen name="font_title">25dp</dimen>
+
+    <!--外边距 -->
+    <dimen name="margin_min">3dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_big">24dp</dimen>
+    <dimen name="margin_big_more">32dp</dimen>
+
+    <!--卡片的圆角值-->
+    <dimen name="border_radius_normal">5dp</dimen>
+    <dimen name="border_radius_big">15dp</dimen>
+
+    <!--文字类-->
+    <dimen name="line_space_small">3dp</dimen>
+    <dimen name="line_space_normal">6dp</dimen>
+    <dimen name="line_space_big">10dp</dimen>
+</resources>
