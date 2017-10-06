@@ -17,4 +17,8 @@
     <color name="colorTranslateDark">#7c8c8b89</color>
     <color name="colorBlackLight">#545454</color>
     <color name="colorBlack">#252525</color>
+
+
+    <!--红色-->
+    <color name="color_red">#ff3300</color>
 </resources>

@@ -1,6 +1,7 @@
 package xyz.toofun.diandian.presenter
 
 import android.content.Context
+import android.util.Log
 import android.view.View
 import xyz.toofun.diandian.R
 import xyz.toofun.diandian.fragment.ArticleMapFragment
@@ -16,6 +17,7 @@ import xyz.toofun.diandian.view.MainView
  * Created by bear on 2017/9/30.
  */
 class MainPresenter(context: Context, view: MainView) : BasePresenter<MainView>(context, view), View.OnClickListener {
+    private val TAG = "MainPresenter"
 
     private lateinit var mMapFragment: ArticleMapFragment //地图界面
     private lateinit var mMenuFragment: MenuFragment //左边菜单
@@ -43,7 +45,9 @@ class MainPresenter(context: Context, view: MainView) : BasePresenter<MainView>(
      */
     fun initMap() {
         ILocationManager.instance.init(mContext?.applicationContext!!, mView?.getMapView()?.map)
+    }
 
+    fun initClickEvent() {
         mView?.sideslipLayout?.getHomeView()?.findViewById(R.id.message)?.setOnClickListener(this)
         mView?.sideslipLayout?.getHomeView()?.findViewById(R.id.animate_position)?.setOnClickListener(this)
     }
@@ -66,10 +70,12 @@ class MainPresenter(context: Context, view: MainView) : BasePresenter<MainView>(
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.message -> {
+                Log.i(TAG, "消息")
                 ToastUtil.showToastR(mContext, R.string.message)
             }
 
             R.id.animate_position -> {
+                Log.i(TAG, "定位")
                 animateUserPosition()
             }
         }

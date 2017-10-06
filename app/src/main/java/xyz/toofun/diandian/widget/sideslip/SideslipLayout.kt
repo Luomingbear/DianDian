@@ -255,22 +255,22 @@ class SideslipLayout : FrameLayout {
             MotionEvent.ACTION_MOVE -> {
                 val x = ev.x
                 val y = ev.y
-                mInterceptMoveX = x - mInterceptMoveX
-                mInterceptMoveY = y - mInterceptMoveY
+                mInterceptMoveX = x - mTouchStartX
+                mInterceptMoveY = y - mTouchStartY
 
+                Log.e(TAG, "距离x:" + mInterceptMoveX)
                 /**
                  * 先判断手指按下时是否在边界
                  * 如果在边界，并且手指滑动的距离大于10； 则拦截触摸事件
                  */
                 if (computeIsTouchInSide(mTouchStartX, mTouchStartY) && canHideSideView) {
-                    if (Math.abs(mInterceptMoveX) > 10 || Math.abs(mInterceptMoveY) > 10) {
+                    if (Math.abs(mInterceptMoveX) > 20 || Math.abs(mInterceptMoveY) > 20) {
+                        Log.e(TAG, "拦截")
                         return true
                     }
                 }
             }
 
-            MotionEvent.ACTION_CANCEL, MotionEvent.ACTION_UP -> {
-            }
         }
         return super.onInterceptTouchEvent(ev)
     }
@@ -296,7 +296,7 @@ class SideslipLayout : FrameLayout {
                 val y = event.y
 
                 //移动距离不够则不进行动画
-                if (Math.abs(x - mTouchStartX) < 50 && Math.abs(y - mTouchStartY) < 50)
+                if (Math.abs(x - mTouchStartX) < 20 && Math.abs(y - mTouchStartY) < 20)
                     return true
 
                 /**
@@ -320,7 +320,24 @@ class SideslipLayout : FrameLayout {
      * @return
      */
     private fun computeIsTouchInSide(x: Float, y: Float): Boolean {
-        return if (x < mWidth / 5 || x > mWidth / 5f * 4 || y < mHeight / 5 || y > mHeight / 5f * 4) true else false
+        if (x < mWidth / 5) {
+            //left
+            if (mLeftViewItem != null)
+                return true
+        } else if (x > mWidth / 5f * 4) {
+            if (mRightViewItem != null)
+                return true
+        }
+
+        if (y < mHeight / 5) {
+            if (mTopViewItem != null)
+                return false
+        } else if (y > mHeight / 5f * 4) {
+            if (mBottomViewItem != null)
+                return true
+        }
+
+        return false
     }
 
     /**

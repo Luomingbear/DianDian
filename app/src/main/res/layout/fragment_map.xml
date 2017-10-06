@@ -24,6 +24,19 @@
         android:padding="@dimen/margin_min"
         android:src="@drawable/message" />
 
+    <TextView
+        android:id="@+id/notice_point"
+        android:layout_width="@dimen/font_small"
+        android:layout_height="@dimen/font_small"
+        android:layout_alignTop="@id/message"
+        android:layout_marginLeft="-25dp"
+        android:layout_toRightOf="@id/message"
+        android:background="@drawable/red_circle_bg"
+        android:elevation="@dimen/height_normal"
+        android:gravity="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/font_small" />
+
     <ImageView
         android:id="@+id/animate_position"
         android:layout_width="@dimen/icon_large"

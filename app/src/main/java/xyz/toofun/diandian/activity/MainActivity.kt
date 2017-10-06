@@ -29,7 +29,6 @@ class MainActivity : BaseActivity(), MainView {
     }
 
     override fun initEvent() {
-        mPresenter.initMap()
     }
 
     override val sideslipLayout: SideslipLayout
@@ -54,10 +53,15 @@ class MainActivity : BaseActivity(), MainView {
         super.onResume()
         //在activity执行onResume时执行mMapView.onResume ()，重新绘制加载地图
         getMapView().onResume()
+
+        mPresenter.initMap()
+
         if (checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION))
             mPresenter.startLocation()
         else
             requestLocationPermission()
+
+        mPresenter.initClickEvent()
     }
 
     override fun onPause() {
