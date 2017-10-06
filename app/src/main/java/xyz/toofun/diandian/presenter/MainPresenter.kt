@@ -45,6 +45,13 @@ class MainPresenter(context: Context, view: MainView) : BasePresenter<MainView>(
      */
     fun initMap() {
         ILocationManager.instance.init(mContext?.applicationContext!!, mView?.getMapView()?.map)
+        //地图的触摸事件
+        //
+        mView?.getMapView()?.map?.setOnMapTouchListener {
+            if (mView?.sideslipLayout?.isShowSideLayout() ?: false) {
+                mView?.sideslipLayout?.hideSideView()
+            }
+        }
     }
 
     fun initClickEvent() {

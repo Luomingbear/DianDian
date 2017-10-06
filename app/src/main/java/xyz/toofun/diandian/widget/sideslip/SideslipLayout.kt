@@ -785,6 +785,14 @@ class SideslipLayout : FrameLayout {
         this.canHideSideView = canHideSideView
     }
 
+    fun isShowSideLayout(): Boolean {
+        return isShowingSide
+    }
+
+    fun hideSideView() {
+        animateHideSideView(mMoveSide)
+    }
+
     private var mListener: OnSideslipListener? = null
 
     fun setOnSideslipListener(mListener: OnSideslipListener) {

@@ -82,11 +82,12 @@ class ILocationManager protected constructor() : IMapManager.OnMarkerClickedList
      * 开始定位
      */
     fun start() {
-        Log.i(TAG, "page: 定位管家开始服务！！！")
         if (mAppContext == null || mAMap == null) {
             Log.e(TAG, "page: 定位启动失败！")
             return
         }
+        Log.i(TAG, "page: 定位管家开始服务！！！")
+
         if (mLocationSever == null)
             mLocationSever = ILocationSever(mAppContext)
 

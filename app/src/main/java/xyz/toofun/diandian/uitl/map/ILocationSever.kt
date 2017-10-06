@@ -14,6 +14,8 @@ import java.util.*
  */
 
 class ILocationSever(applicationContext: Context?) {
+    private val TAG = "ILocationSever"
+
     //声明AMapLocationClient类对象
     var mLocationClient: AMapLocationClient? = null
     //声明AMapLocationClientOption对象
@@ -48,7 +50,7 @@ class ILocationSever(applicationContext: Context?) {
                 if (aMapLocation.errorCode == 12) {
                     //缺少定位权限
                     return@AMapLocationListener
-                }else{
+                } else {
 
                 }
             }
@@ -139,7 +141,4 @@ class ILocationSever(applicationContext: Context?) {
         fun onLocationChange(aMapLocation: AMapLocation?)
     }
 
-    companion object {
-        private val TAG = "ILocationSever"
-    }
 }

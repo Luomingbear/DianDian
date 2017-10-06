@@ -3,6 +3,7 @@ package xyz.toofun.diandian.uitl.map
 import android.content.Context
 import android.util.Log
 import com.amap.api.maps.AMap
+import com.amap.api.maps.AMapUtils
 import com.amap.api.maps.CameraUpdateFactory
 import com.amap.api.maps.UiSettings
 import com.amap.api.maps.model.CameraPosition
@@ -10,7 +11,9 @@ import com.amap.api.maps.model.LatLng
 import com.amap.api.maps.model.Marker
 import xyz.toofun.diandian.uitl.NameUtil
 import xyz.toofun.diandian.uitl.SharePreferenceManager
+import xyz.toofun.diandian.widget.marker.MyCircleMarker
 import java.io.File
+
 
 /**
  * mapview的管理者
@@ -26,6 +29,9 @@ class IMapManager {
 
     private val mZoomLevel = 15 //默认的地图缩放比例
     private val markerMinDistance = 15 //图标之间的最小距离，小于这个距离就只会显示一个！
+
+
+    private var mMyPositionMarker: MyCircleMarker? = null //个人位置点图标
 
     constructor(context: Context, aMap: AMap?) {
         if (aMap == null)
@@ -139,6 +145,14 @@ class IMapManager {
         if (latLng == null)
             return
         //        Log.i(TAG, "showMyPositionIcon: !!!!!!!!!!!!!!!");
+        if (mMyPositionMarker == null)
+            mMyPositionMarker = MyCircleMarker(mContext, mAMap, latLng)
+
+        if (AMapUtils.calculateLineDistance(mMyPositionMarker?.getLatLng(), mLatLng) > 200) {
+            mAMap.clear()
+            mMyPositionMarker = MyCircleMarker(mContext, mAMap, latLng)
+        } else
+            mMyPositionMarker?.animate(latLng)
 
     }
 
@@ -246,6 +260,3 @@ class IMapManager {
         private val TAG = "IMapManager"
     }
 }
-/**
- * 移动摄像机到当前的位置
- */
