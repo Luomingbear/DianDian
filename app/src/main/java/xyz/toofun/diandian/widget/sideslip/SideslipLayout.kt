@@ -789,6 +789,11 @@ class SideslipLayout : FrameLayout {
         return isShowingSide
     }
 
+    fun getShowSide(): Int {
+        return mMoveSide
+    }
+
+
     fun hideSideView() {
         animateHideSideView(mMoveSide)
     }

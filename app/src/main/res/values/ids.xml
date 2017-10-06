@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--侧滑菜单-->
     <item name="sideslip_home_layout" type="id" />
     <item name="sidelip_left_layout" type="id" />
     <item name="sideslip_top_layout" type="id" />
     <item name="sideslip_right_layout" type="id" />
     <item name="sideslip_bottom_layout" type="id" />
 
+
+    <!--富文本-->
+    <item name="edit_image_view" type="id" />
+    <item name="edit_image_describe" type="id" />
+    <item name="image_close" type="id" />
+    <item name="edit_content_paragraph" type="id" />
+    <item name="statusbarutil_fake_status_bar_view" type="id" />
+    <item name="statusbarutil_translucent_view" type="id" />
+    <item name="story_cover" type="id" />
 </resources>

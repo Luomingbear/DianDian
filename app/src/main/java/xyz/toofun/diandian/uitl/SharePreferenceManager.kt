@@ -13,7 +13,7 @@ object SharePreferenceManager {
     /**
      * 用户数据
      */
-    val USER_DATA = "userData"
+    private val USER_DATA = "userData"
     private val NICK_NAME = "nickName" //昵称
     private val AVATAR = "avatar" //头像
     private val USER_ID = "userId" //roomId
@@ -24,7 +24,7 @@ object SharePreferenceManager {
     /**
      * 故事数据
      */
-    val STORY_DATA = "storyData"
+    private val STORY_DATA = "storyData"
     private val CONTENT = "content" //正文
     private val TITLE = "title" //标题
     private val COVER_PIC = "coverPic" //封面图
@@ -33,18 +33,18 @@ object SharePreferenceManager {
     /**
      * 定位数据
      */
-    val LOCATION_DATA = "locationData"
-    val CITY_NAME = "cityName"
-    val LAT = "lat"
-    val LNG = "lng"
+    private  val LOCATION_DATA = "locationData"
+    private val CITY_NAME = "cityName"
+    private val LAT = "lat"
+    private val LNG = "lng"
 
 
     /**
      * 登录信息
      */
-    val LOGIN_DATA = "LOGIN_DATA"
-    val IS_LOGIN = "isLogin"
-    val IS_NIGHT_MODE = "isNight" //夜间模式
+    private val LOGIN_DATA = "LOGIN_DATA"
+    private val IS_LOGIN = "isLogin"
+    private val IS_NIGHT_MODE = "isNight" //夜间模式
 
     /**
      * 是否是第一次打开

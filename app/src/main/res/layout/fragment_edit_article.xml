@@ -1,13 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="写文章" />
+    <!--底部工具栏-->
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/selector_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorWhiteDeep"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/add_pic"
+            android:layout_width="@dimen/image_normal"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="@dimen/icon_small"
+                android:layout_height="@dimen/icon_small"
+                android:layout_centerInParent="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/picture" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/undo"
+            android:layout_width="@dimen/image_normal"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="@dimen/icon_small"
+                android:layout_height="@dimen/icon_small"
+                android:layout_centerInParent="true"
+                android:src="@drawable/undo" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/redo"
+            android:layout_width="@dimen/image_normal"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="@dimen/icon_small"
+                android:layout_height="@dimen/icon_small"
+                android:layout_centerInParent="true"
+                android:src="@drawable/redo" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!--编辑框-->
+    <ScrollView
+        android:id="@+id/content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_layout"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorWhite">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_normal">
+
+            <EditText
+                android:id="@+id/title_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_normal"
+                android:background="@color/colorWhite"
+                android:hint="@string/title_hint"
+                android:lineSpacingExtra="@dimen/line_space_normal"
+                android:textColor="@color/colorGrayDeep"
+                android:textSize="@dimen/font_title"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorGrayLight"
+                android:layerType="software" />
+
+            <xyz.toofun.diandian.widget.RichTextEditor
+                android:id="@+id/rich_text_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </xyz.toofun.diandian.widget.RichTextEditor>
+
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

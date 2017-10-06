@@ -148,7 +148,7 @@ class IMapManager {
         if (mMyPositionMarker == null)
             mMyPositionMarker = MyCircleMarker(mContext, mAMap, latLng)
 
-        if (AMapUtils.calculateLineDistance(mMyPositionMarker?.getLatLng(), mLatLng) > 200) {
+        if (AMapUtils.calculateLineDistance(mMyPositionMarker?.latLng, mLatLng) > 200) {
             mAMap.clear()
             mMyPositionMarker = MyCircleMarker(mContext, mAMap, latLng)
         } else

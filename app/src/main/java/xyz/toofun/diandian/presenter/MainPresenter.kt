@@ -2,6 +2,7 @@ package xyz.toofun.diandian.presenter
 
 import android.content.Context
 import android.util.Log
+import android.view.Gravity
 import android.view.View
 import xyz.toofun.diandian.R
 import xyz.toofun.diandian.fragment.ArticleMapFragment
@@ -48,7 +49,7 @@ class MainPresenter(context: Context, view: MainView) : BasePresenter<MainView>(
         //地图的触摸事件
         //
         mView?.getMapView()?.map?.setOnMapTouchListener {
-            if (mView?.sideslipLayout?.isShowSideLayout() ?: false) {
+            if (mView?.sideslipLayout?.isShowSideLayout() ?: false && mView?.sideslipLayout?.getShowSide() ?: Gravity.LEFT == Gravity.LEFT) {
                 mView?.sideslipLayout?.hideSideView()
             }
         }

@@ -19,4 +19,8 @@
     <string name="message">消息</string>
     <string name="slip_up_create">上滑写故事</string>
 
+    <!--编辑文章-->
+    <string name="title_hint">请输入标题</string>
+    <string name="edit_content">编辑正文</string>
+    <string name="picture_hint">图片来自于%s</string>
 </resources>
