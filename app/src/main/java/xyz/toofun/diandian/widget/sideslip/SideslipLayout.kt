@@ -105,11 +105,13 @@ class SideslipLayout : FrameLayout {
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
 
-        //得到布局的宽高
-        this.mWidth = w
-        this.mHeight = h
+        if (mWidth == 0)
+            mWidth = w
+        if (mHeight == 0)
+            mHeight = h
     }
 
+ 
     override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
         super.onLayout(changed, left, top, right, bottom)
 
