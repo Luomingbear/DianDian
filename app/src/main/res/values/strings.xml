@@ -23,4 +23,6 @@
     <string name="title_hint">请输入标题</string>
     <string name="edit_content">编辑正文</string>
     <string name="picture_hint">图片来自于%s</string>
+    <string name="hide_edit_plan">点击收起</string>
+    <string name="issue">发布</string>
 </resources>

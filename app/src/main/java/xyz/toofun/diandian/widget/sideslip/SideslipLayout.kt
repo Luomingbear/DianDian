@@ -111,7 +111,7 @@ class SideslipLayout : FrameLayout {
             mHeight = h
     }
 
- 
+
     override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
         super.onLayout(changed, left, top, right, bottom)
 
@@ -271,10 +271,12 @@ class SideslipLayout : FrameLayout {
                         return true
                     }
                 }
+
+                return false
             }
 
         }
-        return super.onInterceptTouchEvent(ev)
+        return false
     }
 
 
@@ -508,6 +510,7 @@ class SideslipLayout : FrameLayout {
      * @param gravity //执行动画的侧边
      */
     private fun animateShowSideView(gravity: Int) {
+        mMoveSide = gravity
         var startVal = 0f
         var endVal = 0f
         when (gravity) {
@@ -524,7 +527,7 @@ class SideslipLayout : FrameLayout {
                 endVal = 0f
             }
             Gravity.RIGHT -> {
-                if (mTopViewItem == null)
+                if (mRightViewItem == null)
                     return
                 startVal = mRightViewItem?.layout!!.getX()
                 endVal = (1 - mRightViewItem!!.scale) * mWidth
@@ -800,6 +803,10 @@ class SideslipLayout : FrameLayout {
         animateHideSideView(mMoveSide)
     }
 
+    fun showSideView(gravity: Int) {
+        animateShowSideView(gravity)
+    }
+
     private var mListener: OnSideslipListener? = null
 
     fun setOnSideslipListener(mListener: OnSideslipListener) {
@@ -816,5 +823,14 @@ class SideslipLayout : FrameLayout {
 
         //侧滑菜单隐藏
         fun onHide(gravity: Int)
+    }
+
+    /**
+     * 菜单里面的点击事件，用于通知父布局进行显示和隐藏动画
+     */
+    interface OnSideLayoutClickListener {
+        fun onClickHide()
+
+        fun onClickShow(gravity: Int)
     }
 }

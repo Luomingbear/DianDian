@@ -5,6 +5,7 @@ import android.view.View
 import xyz.toofun.diandian.R
 import xyz.toofun.diandian.presenter.MenuPresenter
 import xyz.toofun.diandian.view.MenuView
+import xyz.toofun.diandian.widget.sideslip.SideslipLayout
 
 /**
  * 左侧菜单的fragment

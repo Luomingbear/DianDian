@@ -162,6 +162,7 @@ class IMapManager {
     fun animate2Position() {
         if (mAMap == null)
             return
+
         if (mLatLng == null) {
             mLatLng = SharePreferenceManager.getLatLngData(mContext)
         }

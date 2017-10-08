@@ -7,6 +7,7 @@ import com.amap.api.maps.MapView
 import xyz.toofun.diandian.R
 import xyz.toofun.diandian.presenter.ArticleMapPresenter
 import xyz.toofun.diandian.view.ArticleMapView
+import xyz.toofun.diandian.widget.sideslip.SideslipLayout
 
 /**
  * 地图界面
@@ -15,6 +16,11 @@ import xyz.toofun.diandian.view.ArticleMapView
 class ArticleMapFragment : BaseFragment(), ArticleMapView {
     private val TAG = "ArticleMapFragment"
     private lateinit var mPresenter: ArticleMapPresenter
+    private var mListener: SideslipLayout.OnSideLayoutClickListener? = null
+
+    fun setOnBottonSideLayoutClickListener(listener: SideslipLayout.OnSideLayoutClickListener) {
+        this.mListener = listener
+    }
 
 
     override fun getLayoutId(): Int {

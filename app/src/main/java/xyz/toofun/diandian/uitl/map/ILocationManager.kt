@@ -172,7 +172,7 @@ class ILocationManager protected constructor() : IMapManager.OnMarkerClickedList
         /**
          * 设置用户的图标显示
          */
-        mMapManager!!.showMyPositionIcon(latLng)
+        mMapManager?.showMyPositionIcon(latLng)
 
         //保存位置信息到本地
         saveLatlngPreference(latLng)
@@ -194,8 +194,7 @@ class ILocationManager protected constructor() : IMapManager.OnMarkerClickedList
      * @param latLng
      */
     private fun saveLatlngPreference(latLng: LatLng) {
-        if (latLng != SharePreferenceManager.getLatLngData(mAppContext!!))
-            SharePreferenceManager.saveLatLng(mAppContext!!, latLng)
+        SharePreferenceManager.saveLatLng(mAppContext!!, latLng)
     }
 
     private var onLocationMarkerClickListener: OnLocationMarkerClickListener? = null

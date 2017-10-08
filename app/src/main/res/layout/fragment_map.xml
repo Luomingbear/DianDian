@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -11,6 +12,20 @@
         android:background="@color/colorGrayLight">
 
     </com.amap.api.maps.MapView>
+
+    <xyz.toofun.diandian.widget.RoundImageView
+        android:id="@+id/person"
+        android:layout_width="@dimen/icon_large"
+        android:layout_height="@dimen/icon_large"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/margin_normal"
+        android:elevation="@dimen/height_normal"
+        android:background="@drawable/point_white_bg"
+        android:padding="@dimen/margin_min"
+        android:src="@drawable/test"
+        app:RoundType="circle" />
+
 
     <ImageView
         android:id="@+id/message"

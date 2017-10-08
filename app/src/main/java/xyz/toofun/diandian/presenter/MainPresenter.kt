@@ -5,13 +5,12 @@ import android.util.Log
 import android.view.Gravity
 import android.view.View
 import xyz.toofun.diandian.R
-import xyz.toofun.diandian.fragment.ArticleMapFragment
 import xyz.toofun.diandian.fragment.EditArticleFragment
 import xyz.toofun.diandian.fragment.MenuFragment
 import xyz.toofun.diandian.uitl.ToastUtil
 import xyz.toofun.diandian.uitl.map.ILocationManager
-import xyz.toofun.diandian.uitl.map.IMapManager
 import xyz.toofun.diandian.view.MainView
+import xyz.toofun.diandian.widget.sideslip.SideslipLayout
 
 /**
  * 主要的activity的逻辑
@@ -20,15 +19,28 @@ import xyz.toofun.diandian.view.MainView
 class MainPresenter(context: Context, view: MainView) : BasePresenter<MainView>(context, view), View.OnClickListener {
     private val TAG = "MainPresenter"
 
-    private lateinit var mMapFragment: ArticleMapFragment //地图界面
     private lateinit var mMenuFragment: MenuFragment //左边菜单
     private lateinit var mEditArticleFragment: EditArticleFragment //写文章的fragment
-    private lateinit var mMapManager: IMapManager //地图管家
+
+    var mOnSideLayoutClickListener = object : SideslipLayout.OnSideLayoutClickListener {
+        override fun onClickHide() {
+            mView?.sideslipLayout?.hideSideView()
+
+        }
+
+        override fun onClickShow(gravity: Int) {
+            mView?.sideslipLayout?.showSideView(gravity)
+        }
+    }
 
     fun initSideslipLayout() {
-        mMapFragment = ArticleMapFragment()
         mMenuFragment = MenuFragment()
+
         mEditArticleFragment = EditArticleFragment()
+        mEditArticleFragment.setOnBottonSideLayoutClickListener(mOnSideLayoutClickListener)
+
+
+
 
         mView?.sideslipLayout?.setFragmentManager(mView?.getFragemntManagerr())
 //
@@ -56,6 +68,7 @@ class MainPresenter(context: Context, view: MainView) : BasePresenter<MainView>(
     }
 
     fun initClickEvent() {
+        mView?.sideslipLayout?.getHomeView()?.findViewById(R.id.person)?.setOnClickListener(this)
         mView?.sideslipLayout?.getHomeView()?.findViewById(R.id.message)?.setOnClickListener(this)
         mView?.sideslipLayout?.getHomeView()?.findViewById(R.id.animate_position)?.setOnClickListener(this)
     }
@@ -77,6 +90,10 @@ class MainPresenter(context: Context, view: MainView) : BasePresenter<MainView>(
 
     override fun onClick(v: View?) {
         when (v?.id) {
+            R.id.person -> {
+                mView?.sideslipLayout?.showSideView(Gravity.LEFT)
+            }
+
             R.id.message -> {
                 Log.i(TAG, "消息")
                 ToastUtil.showToastR(mContext, R.string.message)

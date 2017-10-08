@@ -1,6 +1,8 @@
 package xyz.toofun.diandian.presenter
 
 import android.content.Context
+import xyz.toofun.diandian.R
+import xyz.toofun.diandian.uitl.ToastUtil
 import xyz.toofun.diandian.view.EditArticleView
 
 /**
@@ -9,4 +11,15 @@ import xyz.toofun.diandian.view.EditArticleView
  */
 class EditArticlePresenter(context: Context, view: EditArticleView) :
         BasePresenter<EditArticleView>(context, view) {
+
+    fun clickIssue() {
+        ToastUtil.showToastR(mContext, R.string.issue)
+
+    }
+
+    fun clickHide() {
+        ToastUtil.showToastR(mContext, R.string.hide_edit_plan)
+    }
+
+
 }

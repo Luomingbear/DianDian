@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWhite"
     android:orientation="vertical">
 
     <!--底部工具栏-->
@@ -55,14 +55,33 @@
         </RelativeLayout>
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/hide_edit_plan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/margin_normal"
+        android:text="@string/hide_edit_plan"
+        android:textColor="@color/colorGrayDeep"
+        android:textSize="@dimen/font_small" />
+
+    <TextView
+        android:id="@+id/issue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/margin_normal"
+        android:text="@string/issue"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/font_normal" />
+
     <!--编辑框-->
     <ScrollView
         android:id="@+id/content_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_layout"
-        android:layout_alignParentTop="true"
-        android:background="@color/colorWhite">
+        android:layout_below="@id/hide_edit_plan">
 
         <LinearLayout
             android:layout_width="match_parent"
